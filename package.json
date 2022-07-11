@@ -4,8 +4,9 @@
   "description": "An e2e framework for testing Deinbett.de page",
   "main": "index.js",
   "scripts": {
-    "cypress:run": "cypress open",
-    "cypress:reports": "node cypress/reports/cucumber-html-reports"
+    "cypress:ui": "cypress open",
+    "cypress:run": "npx cypress run",
+    "cypress:reports": "npm run cypress:run && node cypress/reports/cucumber-html-reports"
   },
   "repository": {
     "type": "git",
