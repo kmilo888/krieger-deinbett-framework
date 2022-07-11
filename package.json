@@ -6,7 +6,9 @@
   "scripts": {
     "cypress:ui": "cypress open",
     "cypress:run": "npx cypress run",
-    "cypress:reports": "npm run cypress:run && node cypress/reports/cucumber-html-reports"
+    "cypress:reports": "npm run cypress:run && node cypress/reports/cucumber-html-reports",
+    "docker:build": "docker build -t krieger-deinbett-framework-image:1.0.0 .",
+    "docker:run": "docker run -i -v \"%cd%\":///krieger-deinbett-framework -t krieger-deinbett-framework-image:1.0.0"    
   },
   "repository": {
     "type": "git",
