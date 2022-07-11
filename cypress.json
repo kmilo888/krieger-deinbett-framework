@@ -1,4 +1,4 @@
 {
     "baseUrl": "https://www.deinbett.de",
-    "testfiles": "**/*.feature"
+    "testFiles": "**/*.feature"
 }
