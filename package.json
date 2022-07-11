@@ -1,0 +1,31 @@
+{
+  "name": "krieger-deinbett-framework",
+  "version": "1.0.0",
+  "description": "An e2e framework for testing Deinbett.de page",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmilo888/krieger-deinbett-framework.git"
+  },
+  "keywords": [
+    "cucumber",
+    "cypress",
+    "javascript"
+  ],
+  "author": "Camilo Parra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmilo888/krieger-deinbett-framework/issues"
+  },
+  "homepage": "https://github.com/kmilo888/krieger-deinbett-framework#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor" : {
+    "nonGlobalStepDefinitions": true
+  }
+}
