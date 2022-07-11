@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cypress:run": "cypress open",
-    "cypress:reports": "node cucumber-html-reports"
+    "cypress:reports": "node cypress/reports/cucumber-html-reports"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "nonGlobalStepDefinitions": true,
     "cucumberJson": {
       "generate": true,
-      "outputFolder": "cypress/cucumber-json",
+      "outputFolder": "cypress/reports/json",
       "filePrefix": "",
       "fileSuffix": ".cucumber"
     }

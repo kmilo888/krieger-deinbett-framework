@@ -1,4 +1,7 @@
-cypress/cucumber-json
+# Exclude node_modules and package-lock.json
 node_modules
-reports
 package-lock.json
+
+# Exclude all report folder, except the report generator file
+cypress/reports/*
+!cypress/reports/cucumber-html-reports.js
