@@ -16,5 +16,5 @@ COPY ./cypress ./cypress
 RUN npm install
 
 #Run cypress in the container
-ENTRYPOINT ["npm","run","cypress:reports"]
-#CMD ["npm","run","cypress:reports"]
+ENTRYPOINT ["npm","run","cy:reports:firefox:docker"]
+#CMD ["npm","run","cy:reports"]
