@@ -7,4 +7,4 @@ cypress/videos/*
 
 # Exclude all report folder, except the report generator file
 cypress/reports/*
-!cypress/reports/cucumber-html-reports.js
+!cypress/reports/cucumber-html-reports*.js
