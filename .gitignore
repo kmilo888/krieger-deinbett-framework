@@ -2,7 +2,7 @@
 node_modules
 package-lock.json
 
-# Exclude all report folder, except the report generator file
+# Exclude generated videos
 cypress/videos/*
 
 # Exclude all report folder, except the report generator file

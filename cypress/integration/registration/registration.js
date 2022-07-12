@@ -7,7 +7,7 @@ Given("User visits DeinBett.de", () => {
     cy.visit("/");
 });
 
-And("User clicks the Alle auswahlen bestatigen button, if shown", () => {
+And("User clicks the Alle auswahlen bestatigen button, if cookie modal shows up", () => {
     cookiesModal.optOutAcceptedCookie().then((val) => {
         //if the cookie does not have a value, the user has not accepted the 
         if(!val) {
@@ -16,7 +16,7 @@ And("User clicks the Alle auswahlen bestatigen button, if shown", () => {
     });
 });
 
-When("User clicks the Anmelden button", () => {
+Given("User clicks the Anmelden button", () => {
     home.loginButton().click();
 });
 
