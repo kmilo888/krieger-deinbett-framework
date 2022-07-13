@@ -3,6 +3,7 @@ const cookiesModal = require('../../pom/modals/cookiesModal');
 const home = require('../../pom/pages/home');
 const login = require('../../pom/pages/login');
 const register = require('../../pom/pages/register');
+const forgottenPassword = require('../../pom/pages/forgottenPassword');
 
 Given("User visits DeinBett.de", () => {
     cy.visit("/");
@@ -49,4 +50,18 @@ Then("System creates, logs in and verifies user fullname", () => {
     cy.fixture('random-user').then(function (user) {
         home.fullnameHiddenSpan().contains(`${user.firstName} ${user.lastName}`);
     });
+})
+
+And("User clicks the Passwort vergessen link", () => {
+    login.forgotPasswordLink().click();
+})
+
+And("User types their email", () => {
+    cy.fixture('random-user').then(function (user) {
+        forgottenPassword.emailTextBox().type(user.email);
+    });
+})
+
+And("User clicks the Absenden button", () => {
+    forgottenPassword.submitButton().click();
 })

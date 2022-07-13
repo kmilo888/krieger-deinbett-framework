@@ -12,3 +12,10 @@ Feature: Registration
         And User fills the Neu registrieren form
         And User clicks the Weiter button
         Then System creates, logs in and verifies user fullname
+
+    Scenario: Request forgotten password
+        Given User clicks the Anmelden button
+        And User clicks the Passwort vergessen link
+        And User types their email
+        And User clicks the Absenden button
+
