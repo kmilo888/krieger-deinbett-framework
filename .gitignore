@@ -1,9 +1,16 @@
+# Exclude vscode files
+.vscode
+
 # Exclude node_modules and package-lock.json
 node_modules
 package-lock.json
 
-# Exclude generated videos
-cypress/videos/*
+# Exclude generated evidence files
+cypress/videos
+cypress/screenshots
+
+# Generated random user fixture
+cypress/fixtures/random-user.json
 
 # Exclude all report folder, except the report generator file
 cypress/reports/*

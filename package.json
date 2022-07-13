@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/kmilo888/krieger-deinbett-framework#readme",
   "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
     "cypress": "^9.7.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-xpath": "^2.0.0",

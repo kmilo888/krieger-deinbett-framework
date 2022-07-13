@@ -1,7 +1,8 @@
-import { Given, When, And } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
 const cookiesModal = require('../../pom/modals/cookiesModal');
 const home = require('../../pom/pages/home');
 const login = require('../../pom/pages/login');
+const register = require('../../pom/pages/register');
 
 Given("User visits DeinBett.de", () => {
     cy.visit("/");
@@ -16,10 +17,36 @@ And("User clicks the Alle auswahlen bestatigen button, if cookie modal shows up"
     });
 });
 
-Given("User clicks the Anmelden button", () => {
+Given("System creates a random user", () => {
+    cy.generateRandomUser();
+})
+
+And("User clicks the Anmelden button", () => {
     home.loginButton().click();
 });
 
 When("User clicks the Weiter zur registrierung button", () => {
     login.newAccountButton().click();
 });
+
+And("User fills the Neu registrieren form", () => {
+    cy.fixture('random-user').then(function (user) {
+        register.salutationDropdown().select(user.salutation);
+        register.firstNameTextBox().type(user.firstName);
+        register.lastNameTextBox().type(user.lastName);
+        register.emailTextBox().type(user.email);
+        register.passwordTextBox().type(user.password);
+        register.confirmPasswordTextBox().type(user.password);
+        register.dataProtectionCheckBox().click();
+    });
+})
+
+And("User clicks the Weiter button", () => {
+    register.registerButton().click();
+})
+
+Then("System creates, logs in and verifies user fullname", () => {
+    cy.fixture('random-user').then(function (user) {
+        home.fullnameHiddenSpan().contains(`${user.firstName} ${user.lastName}`);
+    });
+})
