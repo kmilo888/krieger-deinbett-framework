@@ -35,7 +35,7 @@ Cypress.Commands.add('generateRandomUser', () => {
         salutation: gender.toLowerCase(),
         firstName: firstName,
         lastName: lastName,
-        email: faker.internet.email(firstName, lastName, 'mailinator.com'),
+        email: faker.internet.email(firstName, lastName, 'acme.com'),
         password: faker.internet.password(20, true, /[A-Z]/, 'xL$7')
     })
     
