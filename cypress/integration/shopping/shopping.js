@@ -10,6 +10,7 @@ Given("User searchs for an {string}", (article) => {
 
 When("User clicks the Add to Wishlist heart icon in the tile {string}", (number) => {
     search.addToWishlistButton(number).click();
+    search.addToWishlistButtonPressed(number).should("exist");
 });
 
 And("User clicks the Wunschliste button", () => {
@@ -17,11 +18,12 @@ And("User clicks the Wunschliste button", () => {
 });
 
 Then("In the Wishlist the User watches for the tile {string} to check if the article was added", (number) => {
-    wishlist.articleTile(number).should('be.visible');
+    wishlist.articleTile(number).should("be.visible");
 });
 
 When("User clicks the Alle Artikel In Den Warenkorb button", () => {
-    wishlist.addAllToBasketButton().click();
+    wishlist.addAllToBasketButton().click({ force: true });
+    goodChoiceModal.overlay().should("be.visible");
 });
 
 Then("User clicks the Zum Warenkorb button", () => {
@@ -29,7 +31,7 @@ Then("User clicks the Zum Warenkorb button", () => {
 });
 
 And("In the Basket the User watches for the tile {string} to check if the article was added", (number) => {
-    wishlist.articleTile(number).should('be.visible');
+    wishlist.articleTile(number).should("be.visible");
 });
 
 Given("User clicks the Warenkorb button", () => {
