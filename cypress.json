@@ -2,6 +2,7 @@
     "baseUrl": "https://www.deinbett.de",
     "testFiles": [
         "**/registration.feature",
-        "**/login.feature"
+        "**/login.feature",
+        "**/shopping.feature"
     ]
 }
