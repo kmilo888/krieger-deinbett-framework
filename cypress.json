@@ -1,7 +1,9 @@
 {
     "baseUrl": "https://www.deinbett.de",
+    "chromeWebSecurity": false,
     "testFiles": [
         "**/registration.feature",
-        "**/login.feature"
+        "**/login.feature",
+        "**/shopping.feature"
     ]
 }

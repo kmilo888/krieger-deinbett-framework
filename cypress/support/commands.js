@@ -29,7 +29,7 @@ Cypress.Commands.add('generateRandomUser', () => {
 
     const gender = faker.name.gender(true);
     const firstName = faker.name.firstName(gender);
-    const lastName = faker.name.firstName(gender);
+    const lastName = faker.name.lastName(gender);
 
     cy.writeFile('cypress/fixtures/random-user.json', {
         salutation: gender.toLowerCase(),
