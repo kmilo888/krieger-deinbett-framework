@@ -1,0 +1,52 @@
+{
+  "name": "krieger-deinbett-framework",
+  "version": "1.0.0",
+  "description": "An e2e framework for testing Deinbett.de page",
+  "main": "index.js",
+  "scripts": {
+    "cy:ui": "cypress open",
+    "cy:run": "npx cypress run",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:reports:chrome": "npm run cy:run:chrome && node cypress/reports/cucumber-html-reports-win-chrome",
+    "cy:reports:firefox": "npm run cy:run:firefox && node cypress/reports/cucumber-html-reports-win-firefox",
+    "cy:reports:chrome:docker": "npm run cy:run:chrome && node cypress/reports/cucumber-html-reports-linux-chrome",
+    "cy:reports:firefox:docker": "npm run cy:run:firefox && node cypress/reports/cucumber-html-reports-linux-firefox",
+    "docker:build:chrome": "docker build -t krieger-deinbett-framework-image-chrome:1.0.0 -f Dockerfile.chrome .",
+    "docker:build:firefox": "docker build -t krieger-deinbett-framework-image-firefox:1.0.0 -f Dockerfile.firefox .",
+    "docker:run:chrome": "docker run -i -v \"%cd%\":///krieger-deinbett-framework -t krieger-deinbett-framework-image-chrome:1.0.0",
+    "docker:run:firefox": "docker run -i -v \"%cd%\":///krieger-deinbett-framework -t krieger-deinbett-framework-image-firefox:1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmilo888/krieger-deinbett-framework.git"
+  },
+  "keywords": [
+    "javascript",
+    "cypress",
+    "cucumber",
+    "pom"
+  ],
+  "author": "Camilo Parra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmilo888/krieger-deinbett-framework/issues"
+  },
+  "homepage": "https://github.com/kmilo888/krieger-deinbett-framework#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "cypress": "^9.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-xpath": "^2.0.0",
+    "multiple-cucumber-html-reporter": "^1.21.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}
