@@ -1,4 +1,4 @@
-class home{
+class home {
 
     //Search text box
     searchTextBox = () => {

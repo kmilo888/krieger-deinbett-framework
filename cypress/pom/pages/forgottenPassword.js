@@ -1,4 +1,4 @@
-class forgottenPassword{
+class forgottenPassword {
 
     //Email text box
     emailTextBox = () => cy.get("#passwordForgottenEmail");

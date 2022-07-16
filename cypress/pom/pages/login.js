@@ -1,4 +1,4 @@
-class login{
+class login {
 
     //New account button
     newAccountButton = () => cy.get("#registerAccount");

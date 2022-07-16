@@ -1,4 +1,4 @@
-class cookiesModal{
+class cookiesModal {
 
     //Get optOutAccepted cookie to check if it shows the Cookies modal
     optOutAcceptedCookie = () => cy.getCookie('optOutAccepted');

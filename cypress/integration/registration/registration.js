@@ -1,4 +1,4 @@
-import { Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, And } from "cypress-cucumber-preprocessor/steps";
 import login from "../../pom/pages/login";
 import register from "../../pom/pages/register";
 import forgottenPassword from "../../pom/pages/forgottenPassword";

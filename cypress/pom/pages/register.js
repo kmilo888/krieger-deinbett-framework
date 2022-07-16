@@ -1,4 +1,4 @@
-class register{
+class register {
 
     //Form Elements
     salutationDropdown = () => cy.get("#salutation");
