@@ -1,4 +1,4 @@
-class goodChoiceModal{
+class goodChoiceModal {
 
     //Good choice modal overlay
     overlay = () => cy.get("#overlayRight");

@@ -1,4 +1,4 @@
-class wishlist{
+class wishlist {
 
     //Zip code text box
     zipCodeTextBox = () => cy.get(".wishlist__postalCodeArea #zipcode-logistic-input");
