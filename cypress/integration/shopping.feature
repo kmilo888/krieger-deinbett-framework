@@ -24,11 +24,12 @@ Feature: Shopping
 #            | 11130048  | Drehtürenschrank Bradford                                 |
 #            | 10140280  | Lattenrost mit Kopf- und Fußverstellung Dormaflex 210 KF  |
 
-    Scenario: Add items from the Wishlist to the basket
-        Given User clicks the Wunschliste button
-        When User clicks the Alle Artikel In Den Warenkorb button
+#    Scenario: Add items from the Wishlist to the basket
+#        Given User clicks the Wunschliste button
+#        When User enters the zip code "10117"
+#        And User clicks the Alle Artikel In Den Warenkorb button
 #        Then User clicks the Zum Warenkorb button
-#        And In the Basket the User watches for the tile "<number>" to check if the article was added 
+#        And In the Basket the User watches for the tile number to check if the article was added 
 #            | number    |
 #            | 11134356  |
 #            | 11133268  |
@@ -36,15 +37,12 @@ Feature: Shopping
 #            | 11130048  |
 #            | 10140280  |
 #        And User logs off the System
-#
-#    Scenario: Go to basket and verify the merchandise values
-#        Given User clicks the Warenkorb button
-#        When User check each tile "<number>" of articles added and sums the price value 
-#            | number    |
-#            | 11134356  |
-#            | 11133268  |
-#            | 10138817  |
-#            | 11130048  |
-#            | 10140280  |
-#        Then User verifies the total sum and the total shown matches
-#        And User logs off the System
+
+    Scenario: Go to basket and verify the merchandise values
+        Given User clicks the Wunschliste button
+        And User enters the zip code "10117"
+        And User clicks the Alle Artikel In Den Warenkorb button
+        And User clicks the Zum Warenkorb button
+        When User clicks the Warenkorb button
+        Then User sums the article prices and compares the price with the total price excluding shipping 
+        And User logs off the System
